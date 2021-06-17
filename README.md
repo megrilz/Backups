@@ -1,6 +1,6 @@
 # Backups
 
-Step 1: Create, Extract, Compress, and Manage tar Backup Archives
+# Step 1: Create, Extract, Compress, and Manage tar Backup Archives
 Command to extract the TarDocs.tar archive to the current directory: tar xvvf TarDocs.tar ~/Projects
  
 Command to create the Javaless_Doc.tar archive from the TarDocs/ directory, while excluding the TarDocs/Documents/Java directory:
@@ -9,9 +9,10 @@ tar cvf Javaless_Docs.tar --exclude= “TarDocs/Documents/Java” TarDocs/
 
 Command to ensure Java/ is not in the new Javaless_Docs.tar archive:
 tar tvf Javaless_Docs.tar | grep Java
-Bonus
+
 Command to create an incremental archive called logs_backup_tar.gz with only changed files to snapshot.file for the /var/log directory:
 sudo tar --listed-incremental=snapshot.file -cvzf logs_backup.tar.gz /var/log
+
 Critical Analysis Question
 Why wouldn't you use the options -x and -c at the same with tar?
 -x: extracts and writes the files to disk.Because one command creates the file for the archive and then another command executes the tar. -c: creates the name of the directory where the files will be placed. Conflict of interest. 
