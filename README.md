@@ -96,7 +96,7 @@ Command to verify auditd rules:sudo auditctl -l
 
 
 
- Perform Various Log Filtering Techniques
+# Perform Various Log Filtering Techniques
  
 Command to return journalctl messages with priorities from emergency to error: journalctl -b -p emerg..err
 
