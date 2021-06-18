@@ -37,7 +37,7 @@ Command to make the system.sh script executable: sudo chmod +x system.sh
 Commands to test the script and confirm its execution:
 cd ~/backups/diskuse, cd ~/backups/freedisk, cd ~/backups/openlist,                 cd ~/backups/free_mem
 cat disk_usage.txt, cat free_disk.txt, cat open_list.txt, cat free_mem.txt
-Bonus
+
 Command to copy system to system-wide cron directory: sudo cp  ~/system.sh /etc/cron.weekly
 
 # Step 4. Manage Log File Sizes
@@ -97,6 +97,7 @@ Command to verify auditd rules:sudo auditctl -l
 
 
  Perform Various Log Filtering Techniques
+ 
 Command to return journalctl messages with priorities from emergency to error: journalctl -b -p emerg..err
 
 
@@ -107,7 +108,9 @@ Command to remove all archived journal files except the most recent two: sudo jo
 Command to filter all log messages with priority levels between zero and two, and save output to /home/sysadmin/Priority_High.txt:                                                                        sudo journalctl -p 0..2 > /home/sysadmin/Priority_High.txt
 
 
-Command to automate the last command in a daily cronjob. Add the edits made to the crontab file below:  sudo cp ~/Priority_High.sh /etc/cron.daily
+Command to automate the last command in a daily cronjob. 
+
+Add the edits made to the crontab file below:  sudo cp ~/Priority_High.sh /etc/cron.daily
 
 #!/bin/bash
 @daily journalctl -p 0..2 >> ~/home/sysadmin/Priority_High.txt
