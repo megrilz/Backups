@@ -20,7 +20,7 @@ Why wouldn't you use the options -x and -c at the same with tar?
 # Step 2: Create, Manage,  and Automate Cron Jobs
 Cron job for backing up the /var/log/auth.log file: 2 * * * * tar -cvzf /auth_backup.tgz /var/log/auth.log
 
-# Step 3: Write Basic Bash Scripts
+# Step 3: Write Bash Scripts
 Brace expansion command to create the four subdirectories:
 mkdir ~/backups/{freemem,diskuse,openlist,freedisk}
 
